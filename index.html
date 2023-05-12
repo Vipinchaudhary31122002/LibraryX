@@ -16,7 +16,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body style="background-color: black; color: white;">
+  <body style="background-color: black; color: white">
     <!-- navbar -->
     <nav class="navbar" data-bs-theme="dark">
       <div class="container-fluid">
@@ -46,13 +46,13 @@
 
     <!-- form to get input of the books -->
     <div class="container">
-      <form>
+      <form id="LibraryForm">
         <!-- taking input of bookname -->
         <div class="mb-3">
           <input
             type="text"
             class="form-control"
-            id="bookName"
+            id="BookName"
             aria-describedby="emailHelp"
             placeholder="Enter the book name"
           />
@@ -62,32 +62,70 @@
           <input
             type="text"
             class="form-control"
-            id="author"
+            id="Author"
             placeholder="Enter the name of book author"
           />
         </div>
         <!-- specifying the category of the book -->
-        <span style="font-size: large; font-weight: bold">Genre of book</span>
+        <span style="font-size: x-large; font-weight: bold">Genre of book</span>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Fiction" id="Fiction">
-          <label class="form-check-label" for="Fiction">
-            Fiction
-          </label>
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Fiction"
+            id="Fiction"
+          />
+          <label class="form-check-label" for="Fiction"> Fiction </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="ComputerProgramming" id="ComputerProgramming">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="ComputerProgramming"
+            id="ComputerProgramming"
+          />
           <label class="form-check-label" for="ComputerProgramming">
             Computer Programming
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="Science" id="Science">
-          <label class="form-check-label" for="Science">
-            Science
-          </label>
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value="Science"
+            id="Science"
+          />
+          <label class="form-check-label" for="Science"> Science </label>
         </div>
-        <button type="submit" class="btn btn-outline-primary">Add Book</button>
+        <button
+          type="submit"
+          class="btn btn-outline-primary"
+          style="margin-bottom: 10px; margin-top: 10px"
+        >
+          Add Book
+        </button>
       </form>
+      <div id="table">
+        <span style="font-size: x-large; font-weight: bold">Your Books</span>
+        <table class="table" style="color: white">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- bootstrap js -->
