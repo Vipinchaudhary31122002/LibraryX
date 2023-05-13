@@ -1,3 +1,4 @@
+// constructor to add the books
 class Book {
   constructor(name, author, type) {
     this.name = name;
@@ -6,6 +7,7 @@ class Book {
   }
 }
 
+// class to display on user interface
 class Display {
   add(book) {
     console.log("adding the new book");
