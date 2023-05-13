@@ -1,42 +1,39 @@
-// Constructor
-function Book(name, author, type) {
-  this.name = name;
-  this.author = author;
-  this.type = type;
+console.log("this is es6 verison");
+
+class Book {
+  constructor(name, author, type) {
+    this.name = name;
+    this.author = author;
+    this.type = type;
+  }
 }
 
-//  Display constructor
-function Display() {}
-
-// Adde methods to display prototype
-Display.prototype.add = function (book) {
-  console.log("adding the new book");
-  tablebody = document.getElementById("TableBody");
-  let uiString = ` <tr>
-                      <td>${book.name}</td>
-                      <td>${book.author}</td>
-                      <td>${book.type}</td>
-                    </tr>`;
-  tablebody.innerHTML += uiString;
-};
-
-// Implement the clear function
-Display.prototype.clear = function () {
-  LibraryForm.reset();
-};
-
-// Implement the validation function
-Display.prototype.validate = function (book) {
-  if (book.name.length < 2 || book.author.length < 2) {
-    return false;
+class Display {
+  add(book) {
+    console.log("adding the new book");
+    let tablebody = document.getElementById("TableBody");
+    let uiString = ` <tr>
+                            <td>${book.name}</td>
+                            <td>${book.author}</td>
+                            <td>${book.type}</td>
+                          </tr>`;
+    tablebody.innerHTML += uiString;
   }
-  return true;
-};
 
-// Implement the show function
-Display.prototype.show = function (type, showmessage) {
-  let message = document.getElementById("message");
-  message.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
+  clear() {
+    LibraryForm.reset();
+  }
+
+  validate(book) {
+    if (book.name.length < 2 || book.author.length < 2) {
+      return false;
+    }
+    return true;
+  }
+
+  show(type, showmessage) {
+    let message = document.getElementById("message");
+    message.innerHTML = `<div class="alert alert-${type} alert-dismissible fade show" role="alert">
                         ${showmessage}.
                         <button
                           type="button"
@@ -45,10 +42,11 @@ Display.prototype.show = function (type, showmessage) {
                           aria-label="Close"
                         ></button>
                     </div>`;
-  setTimeout(function(){
-    message.innerHTML = '';
-  }, 2000);
-};
+    setTimeout(function () {
+      message.innerHTML = "";
+    }, 2000);
+  }
+}
 
 // Add submit event listener to form
 let LibraryForm = document.getElementById("LibraryForm");
