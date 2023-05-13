@@ -1,5 +1,3 @@
-console.log("this is es6 verison");
-
 class Book {
   constructor(name, author, type) {
     this.name = name;
